@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "Provider": {
+      "type": "string",
+      "enum": [
+        "google",
+        "github"
+      ]
+    },
+    "RedirectUri": {
+      "type": "string",
+      "format": "uri",
+      "maxLength": 2048,
+      "x-validation": "redirect",
+      "description": "Exact registered HTTPS URL or HTTP loopback; no credentials, query or fragment."
+    },
+    "TokenResponse": {
+      "type": "object",
+      "required": [
+        "access_token",
+        "token_type",
+        "expires_in",
+        "scope"
+      ],
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "pattern": "^aop_[A-Za-z0-9_-]{43}$"
+        },
+        "token_type": {
+          "type": "string",
+          "const": "Bearer"
+        },
+        "expires_in": {
+          "type": "integer",
+          "const": 900
+        },
+        "scope": {
+          "type": "string",
+          "const": "profile"
+        }
+      },
+      "additionalProperties": true
+    },
+    "Profile": {
+      "type": "object",
+      "required": [
+        "subject",
+        "provider",
+        "providerSubject",
+        "name",
+        "username",
+        "email",
+        "emailVerified",
+        "avatarUrl"
+      ],
+      "properties": {
+        "subject": {
+          "type": "string"
+        },
+        "provider": {
+          "$ref": "#/$defs/Provider"
+        },
+        "providerSubject": {
+          "type": "string"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "username": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "emailVerified": {
+          "type": "boolean"
+        },
+        "avatarUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "ProviderStatus": {
+      "type": "object",
+      "required": [
+        "id",
+        "configured",
+        "enabled",
+        "available"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Provider"
+        },
+        "configured": {
+          "type": "boolean"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "available": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "ProviderStatuses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ProviderStatus"
+      }
+    },
+    "ApiError": {
+      "type": "object",
+      "required": [
+        "error"
+      ],
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "Transaction": {
+      "type": "object",
+      "required": [
+        "state",
+        "codeVerifier",
+        "codeChallenge",
+        "createdAt",
+        "expiresAt"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{43}$"
+        },
+        "codeVerifier": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._~-]{43,128}$"
+        },
+        "codeChallenge": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{43}$"
+        },
+        "createdAt": {
+          "type": "integer"
+        },
+        "expiresAt": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

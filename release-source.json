@@ -1,0 +1,25 @@
+{
+  "target": "js",
+  "version": "0.1.0",
+  "tag": "v0.1.0",
+  "repository": "https://github.com/AnyOAuth/anyoauth-js",
+  "release": "https://github.com/AnyOAuth/anyoauth-js/releases/tag/v0.1.0",
+  "schemaSha256": "1b99cb23da24b2aa0af33d45aadf907de460185671bc29fa61402450e390d6a2",
+  "sourceCommit": "c44e7460cbebe26a6baa00bc6c4ee2f48d69e907",
+  "files": {
+    ".github/workflows/verify.yml": "2a5dcc038427c28e750358d464bf6413b7670229c658e3b23fdd1076bff89c63",
+    ".gitignore": "108d2b818b63d1f2ffaefee13455961edf1544f49ccf847396de3e85eb5ad724",
+    "LICENSE": "4c2de8ffb6dc3218664d77c0012dc6061465b90558904b2fe6b6e0a8a6c7c32f",
+    "README.md": "f1d96dd47be7a59b6258185ce775af5c52a135680dd035d34b12d4311cfe3182",
+    "index.d.ts": "f916853d52c43ff5d22fe15bc7c1c7fda5cc8a68b6fb63f6058be10c916f398c",
+    "index.js": "45cda1f7a5511b845b4d9c69f4fa5cae77e16dced124feb32b154942dc296661",
+    "package.json": "4dda440ccb05b0579916dd5885f9c50d67e1cecc1accc8dd2f9d9d926692186f",
+    "provenance.json": "3d60b2f931ea3f936df8b82ac20ef91867379c0dd821b46f95e9adfa80b6b88a",
+    "schema.json": "61a2ea18a61121da66984854d91702bd45120a30f16469a63bd3b1c8a924ac8b",
+    "test/check.mjs": "af2e216fa3e1daa0fd1915d92fd2f4ff8a604b007f21bc51e7f6fd87d29b76e8",
+    "test/conformance.mjs": "031ca45abce638ec4043e3850dd93259bda75728f8817a9692ace86a75d89031",
+    "test/models.mjs": "ea96708eaebc85055ee01028f65bf04b30dac0c42ff91be770044c34aaf0b754",
+    "tsconfig.json": "b0774cdaa3787a22066ba4c35cd002d733edd3f98f270a8611fa93d2d445dcef",
+    "verify.mjs": "6f5eff1eeabc1d62b20d6204af877a67bbf9e5d2cacae9d058d9cd3c580bd477"
+  }
+}
